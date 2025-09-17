@@ -1,12 +1,116 @@
 [
   {
-    "scenario": "User tries to attach a .exe file to a BizChat prompt",
-    "component": "Input box Message Bar",
-    "message": "This file type isn\u2019t supported. Try a different file.",
-    "reason": "The error is tied to a specific input field and blocks progress.",
-    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/messagebar/usage"
+    "scenario": "User completes a global action like sending a message or saving a file",
+    "component": "Toast",
+    "message": "Your message was sent.",
+    "reason": "Toast is ideal for transient, global confirmations that don\u2019t block workflow.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [],
+    "decision_tips": [
+      "Use only if the action affects the whole app.",
+      "Avoid persistent toasts for minor updates."
+    ]
   },
   {
+    "scenario": "User updates a field like changing a password or modifying settings",
+    "component": "Inline Message",
+    "message": "Your password has been updated.",
+    "reason": "Inline messages are persistent and contextual to the field or section.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [
+      "Is the change tied to a specific field or section?"
+    ],
+    "decision_tips": [
+      "Use inline messages for localized feedback.",
+      "Avoid using for global actions."
+    ]
+  },
+  {
+    "scenario": "User encounters an empty state in the main content area",
+    "component": "Empty State Panel",
+    "message": "No chats yet. Start a conversation to see it here.",
+    "reason": "Empty state panels guide users when the absence of content is the main focus.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [
+      "Is the empty state localized or global?"
+    ],
+    "decision_tips": [
+      "Use illustrations and CTAs.",
+      "Avoid vague language."
+    ]
+  },
+  {
+    "scenario": "User attempts a destructive action like deleting a thread",
+    "component": "Dialog",
+    "message": "Are you sure you want to delete this thread? This action can\u2019t be undone.",
+    "reason": "Dialogs are used for blocking, critical warnings requiring user confirmation.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [
+      "Is the action irreversible or destructive?"
+    ],
+    "decision_tips": [
+      "Trap focus and require interaction.",
+      "Use for high-risk actions only."
+    ]
+  },
+  {
+    "scenario": "User input fails validation in a form",
+    "component": "Inline Message Bar",
+    "message": "Please enter a valid email address.",
+    "reason": "Inline message bars are used for blocking errors tied to input fields.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [
+      "Is the error tied to a specific input field?"
+    ],
+    "decision_tips": [
+      "Prevent further action until resolved.",
+      "Place near the input field."
+    ]
+  },
+  {
+    "scenario": "User sees a non-blocking warning about expiring password",
+    "component": "Banner",
+    "message": "Your password will expire in 3 days.",
+    "reason": "Banners are used for global, non-blocking warnings.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [
+      "Does the warning affect the whole page or just a section?"
+    ],
+    "decision_tips": [
+      "Use for important but non-urgent alerts.",
+      "Avoid blocking user flow."
+    ]
+  },
+  {
+    "scenario": "User performs an action but it fails temporarily",
+    "component": "Toast",
+    "message": "We couldn't complete your request. Try again.",
+    "reason": "Toast is suitable for transient, non-blocking errors.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [
+      "Is the error temporary and non-blocking?"
+    ],
+    "decision_tips": [
+      "Use for quick failures.",
+      "Avoid persistent error messages."
+    ]
+  },
+  {
+    "scenario": "User input is ambiguous or vague",
+    "component": "Prompt",
+    "message": "Can you clarify what action you were trying to take?",
+    "reason": "Prompting for clarification helps resolve vague user input.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [
+      "What were you trying to do?",
+      "Which part of the app were you using?"
+    ],
+    "decision_tips": [
+      "Use fallback logic to guide user.",
+      "Avoid guessing user intent."
+    ]
+  }
+{
     "scenario": "User has turned off 'Harmful content protection'",
     "component": "Message Bar at top of tab",
     "message": "Harmful content protection is off for this conversation. Start a new chat to turn it on.",
@@ -14,66 +118,141 @@
     "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/messagebar/usage"
   },
   {
-    "scenario": "User adds a chat to a Notebook",
-    "component": "Toast",
-    "message": "Added to Notebook.",
-    "reason": "Non-blocking, short-lived confirmation.",
-    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/toast/usage"
+    "scenario": "User input fails validation in a form",
+    "component": "Inline Message Bar",
+    "message": "Please enter a valid email address.",
+    "reason": "The error is tied to a specific input field and blocks progress.",
+    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/messagebar/usage"
   },
   {
-    "scenario": "User tries to send a message but loses internet connection",
-    "component": "Toast",
-    "message": "Unable to add chat to Notebook. Try again in a little bit",
-    "reason": "Non-blocking, retryable error.",
-    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/toast/usage"
+    "scenario": "User sees a non-blocking warning about expiring password",
+    "component": "Banner",
+    "message": "Your password will expire in 3 days.",
+    "reason": "The warning is global but does not block progress.",
+    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/messagebar/usage"
   },
   {
-    "scenario": "User tries to delete a BizChat thread that contains shared files and tagged colleagues",
-    "component": "Dialog",
-    "message": "Are you sure you want to delete this thread? Files and mentions will be removed.",
-    "reason": "Irreversible action requiring confirmation.",
+    "scenario": "User input is ambiguous or vague",
+    "component": "Prompt",
+    "message": "Can you clarify what action you were trying to take?",
+    "reason": "Clarifies vague user input without blocking workflow.",
     "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/dialog/usage"
   },
   {
-    "scenario": "User opens Notebooks for the first time and doesn't have any",
-    "component": "Full Page Empty Model",
-    "message": "You don't have any Notebooks yet.",
-    "reason": "Entire page lacks content.",
-    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/messagebar/usage"
+    "scenario": "User input fails validation in a form",
+    "component": "Inline Message Bar",
+    "message": "Please enter a valid email address.",
   },
+  [
   {
-    "scenario": "User completes a task like tagging a message",
+    "scenario": "User completes a global action like sending a message or saving a file",
     "component": "Toast",
-    "message": "Tag added.",
-    "reason": "Quick, transient confirmation.",
-    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/toast/usage"
+    "message": "Your message was sent.",
+    "reason": "Toast is ideal for transient, global confirmations that don’t block workflow.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [],
+    "decision_tips": [
+      "Use only if the action affects the whole app.",
+      "Avoid persistent toasts for minor updates."
+    ]
   },
   {
-    "scenario": "User opens the Tasks app for the first time and has no tasks",
-    "component": "Full App Empty Model",
-    "message": "You don\u2019t have any tasks yet.",
-    "reason": "Entire app lacks content.",
-    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/messagebar/usage"
+    "scenario": "User updates a field like changing a password or modifying settings",
+    "component": "Inline Message",
+    "message": "Your password has been updated.",
+    "reason": "Inline messages are persistent and contextual to the field or section.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [
+      "Is the change tied to a specific field or section?"
+    ],
+    "decision_tips": [
+      "Use inline messages for localized feedback.",
+      "Avoid using for global actions."
+    ]
   },
   {
-    "scenario": "User opens a large Notebook with many pages",
-    "component": "Full Page Loading Indicator",
-    "message": "Opening Notebook\u2026",
-    "reason": "Indicates progress during loading.",
-    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/spinner/usage"
+    "scenario": "User encounters an empty state in the main content area",
+    "component": "Empty State Panel",
+    "message": "No chats yet. Start a conversation to see it here.",
+    "reason": "Empty state panels guide users when the absence of content is the main focus.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [
+      "Is the empty state localized or global?"
+    ],
+    "decision_tips": [
+      "Use illustrations and CTAs.",
+      "Avoid vague language."
+    ]
   },
   {
-    "scenario": "User hovers over the shield icon",
-    "component": "Tooltip",
-    "message": "Enterprise data protection applies to this chat",
-    "reason": "On-demand help or explanation.",
-    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/tooltip/usage"
+    "scenario": "User attempts a destructive action like deleting a thread",
+    "component": "Dialog",
+    "message": "Are you sure you want to delete this thread? This action can’t be undone.",
+    "reason": "Dialogs are used for blocking, critical warnings requiring user confirmation.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [
+      "Is the action irreversible or destructive?"
+    ],
+    "decision_tips": [
+      "Trap focus and require interaction.",
+      "Use for high-risk actions only."
+    ]
   },
   {
-    "scenario": "First visit after new feature has been introduced",
-    "component": "Teaching moment",
-    "message": "Select Edit in Pages to turn Copilot's response into content that can be edited, added to, and shared with others.",
-    "reason": "Guidance for new feature.",
-    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/messagebar/usage"
+    "scenario": "User input fails validation in a form",
+    "component": "Inline Message Bar",
+    "message": "Please enter a valid email address.",
+    "reason": "Inline message bars are used for blocking errors tied to input fields.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [
+      "Is the error tied to a specific input field?"
+    ],
+    "decision_tips": [
+      "Prevent further action until resolved.",
+      "Place near the input field."
+    ]
+  },
+  {
+    "scenario": "User sees a non-blocking warning about expiring password",
+    "component": "Banner",
+    "message": "Your password will expire in 3 days.",
+    "reason": "Banners are used for global, non-blocking warnings.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [
+      "Does the warning affect the whole page or just a section?"
+    ],
+    "decision_tips": [
+      "Use for important but non-urgent alerts.",
+      "Avoid blocking user flow."
+    ]
+  },
+  {
+    "scenario": "User performs an action but it fails temporarily",
+    "component": "Toast",
+    "message": "We couldn’t complete your request. Try again.",
+    "reason": "Toast is suitable for transient, non-blocking errors.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [
+      "Is the error temporary and non-blocking?"
+    ],
+    "decision_tips": [
+      "Use for quick failures.",
+      "Avoid persistent error messages."
+    ]
+  },
+  {
+    "scenario": "User input is ambiguous or vague",
+    "component": "Prompt",
+    "message": "Can you clarify what action you were trying to take?",
+    "reason": "Prompting for clarification helps resolve vague user input.",
+    "fluent_link": "https://aka.ms/fluent",
+    "clarifying_questions": [
+      "What were you trying to do?",
+      "Which part of the app were you using?"
+    ],
+    "decision_tips": [
+      "Use fallback logic to guide user.",
+      "Avoid guessing user intent."
+    ]
   }
 ]
