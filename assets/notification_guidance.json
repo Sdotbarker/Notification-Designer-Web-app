@@ -109,7 +109,7 @@
       "Use fallback logic to guide user.",
       "Avoid guessing user intent."
     ]
-  }
+  },
 {
     "scenario": "User has turned off 'Harmful content protection'",
     "component": "Message Bar at top of tab",
