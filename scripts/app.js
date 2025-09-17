@@ -19,7 +19,11 @@ async function sendMessage() {
 
         let response = "Sorry, I need more details to recommend the right notification.";
         for (const item of guidance) {
-            if (userText.toLowerCase().includes(item.scenario.toLowerCase())) {
+            // ✅ Add null/undefined check before calling toLowerCase
+            if (
+                typeof item.scenario === 'string' &&
+                userText.toLowerCase().includes(item.scenario.toLowerCase())
+            ) {
                 response = `Component: ${item.component}\nMessage: ${item.message}\nWhy: ${item.reason}\nFluent UI: ${item.fluent_link}`;
                 break;
             }
