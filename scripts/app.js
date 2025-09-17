@@ -2,6 +2,10 @@ async function sendMessage() {
     const input = document.getElementById('user-input');
     const chatWindow = document.getElementById('chat-window');
     const userText = input.value.trim();
+    if (!userText) return;
+
+    // Display user message
+    const userMsg = document.createElement('div');
     userMsg.textContent = 'You: ' + userText;
     chatWindow.appendChild(userMsg);
 
@@ -35,7 +39,3 @@ async function sendMessage() {
     input.value = '';
     chatWindow.scrollTop = chatWindow.scrollHeight;
 }
-    if (!userText) return;
-
-    // Display user message
-    const userMsg = document.createElement('div');
