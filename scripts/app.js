@@ -11,7 +11,7 @@ async function sendMessage() {
     chatWindow.appendChild(userMsg);
 
     // Simulate agent response
-    const response = await fetch('assets/response.json')
+   const response = await fetch('assets/notification_guidance.json')
         .then(res => res.json())
         .then(data => data[userText.toLowerCase()] || "Sorry, I don't understand that.");
 
