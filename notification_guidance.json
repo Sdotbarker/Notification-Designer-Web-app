@@ -1,0 +1,79 @@
+[
+  {
+    "scenario": "User tries to attach a .exe file to a BizChat prompt",
+    "component": "Input box Message Bar",
+    "message": "This file type isn\u2019t supported. Try a different file.",
+    "reason": "The error is tied to a specific input field and blocks progress.",
+    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/messagebar/usage"
+  },
+  {
+    "scenario": "User has turned off 'Harmful content protection'",
+    "component": "Message Bar at top of tab",
+    "message": "Harmful content protection is off for this conversation. Start a new chat to turn it on.",
+    "reason": "Scoped to chat experience",
+    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/messagebar/usage"
+  },
+  {
+    "scenario": "User adds a chat to a Notebook",
+    "component": "Toast",
+    "message": "Added to Notebook.",
+    "reason": "Non-blocking, short-lived confirmation.",
+    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/toast/usage"
+  },
+  {
+    "scenario": "User tries to send a message but loses internet connection",
+    "component": "Toast",
+    "message": "Unable to add chat to Notebook. Try again in a little bit",
+    "reason": "Non-blocking, retryable error.",
+    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/toast/usage"
+  },
+  {
+    "scenario": "User tries to delete a BizChat thread that contains shared files and tagged colleagues",
+    "component": "Dialog",
+    "message": "Are you sure you want to delete this thread? Files and mentions will be removed.",
+    "reason": "Irreversible action requiring confirmation.",
+    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/dialog/usage"
+  },
+  {
+    "scenario": "User opens Notebooks for the first time and doesn't have any",
+    "component": "Full Page Empty Model",
+    "message": "You don't have any Notebooks yet.",
+    "reason": "Entire page lacks content.",
+    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/messagebar/usage"
+  },
+  {
+    "scenario": "User completes a task like tagging a message",
+    "component": "Toast",
+    "message": "Tag added.",
+    "reason": "Quick, transient confirmation.",
+    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/toast/usage"
+  },
+  {
+    "scenario": "User opens the Tasks app for the first time and has no tasks",
+    "component": "Full App Empty Model",
+    "message": "You don\u2019t have any tasks yet.",
+    "reason": "Entire app lacks content.",
+    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/messagebar/usage"
+  },
+  {
+    "scenario": "User opens a large Notebook with many pages",
+    "component": "Full Page Loading Indicator",
+    "message": "Opening Notebook\u2026",
+    "reason": "Indicates progress during loading.",
+    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/spinner/usage"
+  },
+  {
+    "scenario": "User hovers over the shield icon",
+    "component": "Tooltip",
+    "message": "Enterprise data protection applies to this chat",
+    "reason": "On-demand help or explanation.",
+    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/tooltip/usage"
+  },
+  {
+    "scenario": "First visit after new feature has been introduced",
+    "component": "Teaching moment",
+    "message": "Select Edit in Pages to turn Copilot's response into content that can be edited, added to, and shared with others.",
+    "reason": "Guidance for new feature.",
+    "fluent_link": "https://fluent2.microsoft.design/components/web/react/core/messagebar/usage"
+  }
+]
